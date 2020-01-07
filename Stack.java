@@ -9,8 +9,13 @@ public class Stack {
 	}
 	
 	public void stackPop() {
-		numbers[index] = 0;
-		index -=1;
+		if(index == -1) {
+			System.out.println("Stack is empty");
+		}else{
+			numbers[index] = 0;
+			index -=1;
+		}
+		
 	}
 	
 	public int stackPeek() {
@@ -18,7 +23,7 @@ public class Stack {
 	}
 	
 	public int stackLengh() {
-		return index;
+		return index + 1;
 	}
 	
 	public void stackRead() {
@@ -26,14 +31,14 @@ public class Stack {
 		int i = index;
 		while(i != -1) {
 			if(i == 0) {
-				System.out.print(numbers[i] + "]");
+				System.out.print(numbers[i]);
 			}
 			else {
 				System.out.print(numbers[i]+ " , ");
 			}
 			i--;
 		}
-		
+		System.out.print("]");
 		System.out.println();
 	}
 
